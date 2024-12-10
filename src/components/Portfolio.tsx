@@ -11,27 +11,26 @@ export default function PortfolioGrid() {
     </div>
   );
 }
-
 export const projects = [
   {
-    title: "PlumbreedPuzzle",
+    title: "Plumbreed Puzzle",
     description:
       "A technology company that builds economic infrastructure for the internet.",
-    link: "/projects/plumbreedPuzzle",
+    link: "/projects/plumbreed-puzzle",
     image: "/assets/images/plumbreedpuzzle.png"
   },
   {
-    title: "Wellcresttherapy",
+    title: "wellcrest therapy",
     description:
       "A web app that allows users to practice for front-end and UI interviews.",
-    link: "/projects/wellcrestherapy",
+    link: "/projects/wellcrest-therapy",
     image: "/assets/images/wellcrstherapy.png"
   },
   {
-    title: "Denmarkmultibuzltd",
+    title: "denmark multibuz",
     description:
       "An e-commerce platform with advanced product management and optimized user experience.",
-    link: "/projects/denmarkMultibuz",
+    link: "/projects/denmark-multibuz",
     image: "/assets/images/denmark.png"
   },
   {
@@ -45,7 +44,8 @@ export const projects = [
     title: "Analytical Dashboard",
     description:
       "An interactive data visualization tool for real-time business analytics and insights.",
-    link: "/projects/analyticalDashboard",
+    link: "/projects/analytical-dashboard",
     image: "/assets/images/analyticaldashboard.png"
   }
 ];
+

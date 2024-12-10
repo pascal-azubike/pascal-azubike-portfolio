@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 import { ExternalLink, Code, Zap, Settings } from "lucide-react";
+
 export const HoverEffect = ({
   items,
   className
@@ -19,6 +20,8 @@ export const HoverEffect = ({
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
+
+
     <div
       className={cn(
         "grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-10 gap-10 ",
@@ -90,6 +93,7 @@ export const HoverEffect = ({
         </Link>
       ))}
     </div>
+
   );
 };
 

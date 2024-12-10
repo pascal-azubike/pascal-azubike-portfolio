@@ -1,22 +1,17 @@
 "use client"
 import React from "react";
-
-
 import WorkExperience from "@/components/workExperience";
-import Grid from "@/components/Grid";
 import PortfolioGrid from "@/components/Portfolio";
-
 import { ContentLayout } from "./content-layout";
-
-
-const HomeContent = () => {
+import { ScrollAnimation } from "./scroll-animation";
+export default function HomeContent() {
     return <ContentLayout>
         <div className="min-h-screen bg-zinc-900 text-white">
-
-            <header className=" mx-auto max-w-5xl  py-6">
-                <main className=" max-w-5xl mx-auto mt-32  md:mt-40 px-8  ">
+            <header className="mx-auto max-w-5xl pt-32 md:pt-40 px-8">
+                {/* Hero Section */}
+                <ScrollAnimation>
                     <section className="max-w-3xl">
-                        <h2 className="animate-fade-in-slow text-3xl md:text-4xl lg:text-[43px] font-bold mb-6">
+                        <h2 className=" animate-fade-in-slow text-3xl md:text-4xl lg:text-[43px] font-bold mb-6">
                             I&apos;m a software engineer who builds{" "}
                             <span className="text-blue-400">solutions that drive results</span>
                         </h2>
@@ -30,41 +25,25 @@ const HomeContent = () => {
                             <span className="font-semibold">YouTube videos</span> when I&apos;m
                             not working on my day job.
                         </p>
-
-                      
                     </section>
-
-                    <section className="mt-20 max-w-5xl mx-auto px-4">
-                        <h3 className="text-2xl md:text-3xl text-white font-bold max-w-5xl mx-auto mt-20 md:mt-40">
-                            Work Experience
-                        </h3>
-                        <p className="text-zinc-400 text-sm md:text-base max-w-2xl mt-4 leading-loose tracking-wide ">
-                            I&apos;ve worked across diverse companies, growing my skills and embracing new challenges.
-                        </p>
-                        <WorkExperience />
-                    </section>
-                </main>
+                </ScrollAnimation>
             </header>
-            <div className="max-w-5xl mx-auto px-4 md:px-8 mt-20">
-                <Grid />
-                <section>
-                    <h1 className="text-2xl mt-20 lg:mt-40 md:text-3xl text-white font-bold max-w-5xl mx-auto  ">
-                        I&apos;ve been building a lot of things
-                    </h1>
-                    <div className="max-w-5xl mx-auto ">
-                        <div className=" mt-10 ">
-                            <PortfolioGrid />
-                        </div>
-                    </div>
-                </section>
-            </div>
-           
+            <main className="max-w-5xl mx-auto mt-32 md:mt-40 px-8">
+                <WorkExperience />
+                <div className="mt-10">
+                    <ScrollAnimation>
+
+                        <h1 className="text-2xl mt-20 lg:mt-40 md:text-3xl text-white font-bold">
+                            I&apos;ve been building a lot of things
+                        </h1>
+                    </ScrollAnimation>
+                    <PortfolioGrid />
+                </div>
+            </main>
 
         </div>
-    </ContentLayout>
+    </ContentLayout >
 };
-
-export default HomeContent;
 
 
 

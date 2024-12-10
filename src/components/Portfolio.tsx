@@ -1,12 +1,17 @@
+import { ScrollAnimation } from "./scroll-animation";
 import { HoverEffect } from "./ui/card-hover-effect";
 
 export default function PortfolioGrid() {
   return (
-    <div className="max-w-7xl mx-auto ">
-      <HoverEffect items={projects} />
+    <div className="transform-gpu will-change-transform">
+      
+      <ScrollAnimation>
+        <HoverEffect items={projects} />
+      </ScrollAnimation>
     </div>
   );
 }
+
 export const projects = [
   {
     title: "PlumbreedPuzzle",

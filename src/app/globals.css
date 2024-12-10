@@ -1,0 +1,324 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --buttonBackground: 99 64% 85%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+
+    --radius: 0.5rem;
+
+    --tawk-header-background-color: #18181b !important;
+    --tawk-header-text-color: #ffffff !important;
+    --tawk-header-border-color: #27272a !important;
+    
+    --tawk-message-background-color: #27272a !important;
+    --tawk-message-text-color: #ffffff !important;
+    
+    --tawk-chat-background-color: #18181b !important;
+    --tawk-chat-bubble-background-color: #3b82f6 !important;
+    --tawk-chat-bubble-text-color: #ffffff !important;
+    
+    --tawk-input-background-color: #27272a !important;
+    --tawk-input-text-color: #ffffff !important;
+    --tawk-input-border-color: #3f3f46 !important;
+    
+    --tawk-button-background-color: #3b82f6 !important;
+    --tawk-button-text-color: #ffffff !important;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --buttonBackground: 99 64% 85%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+.ql-syntax {
+  background-color: #282c34 !important;
+  padding: 10px;
+  white-space: pre-wrap; /* Since CSS 2.1 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
+  overflow-wrap: break-word; /* Modern browsers */
+}
+
+ol {
+  list-style-type: decimal; /* Use 'decimal' for normal numbers, 'lower-alpha' for lowercase letters, etc. */
+  margin-left: 20px;
+}
+
+/* Set unordered lists to have dots */
+ul {
+  list-style-type: disc; /* Use 'disc' for filled dots, 'circle' for hollow circles, etc. */
+  margin-left: 14px;
+}
+ul li {
+  padding-left: 8px;
+}
+ol li {
+  padding-left: 15px;
+}
+@media (hover: hover) {
+  .ql-syntax::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+    cursor: grab;
+  }
+
+  .ql-syntax::-webkit-scrollbar-thumb {
+    background-color: #c8c8c8;
+    border-radius: 7px;
+    height: 7px;
+  }
+
+  .ql-syntax::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 6px;
+  }
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* custom scroll bar  */
+@media (hover: hover) {
+  .custom-scrollbar::-webkit-scrollbar {
+    scroll-behavior: smooth;
+    width: 7px;
+    height: 7px;
+    cursor: grab;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #565658;
+    border-radius: 7px;
+    height: 7px;
+    cursor: grab;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 10px;
+  }
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* custom tailwind styles */
+.post-content p {
+  margin: 1em 0;
+
+  font-size: 18px;
+}
+.post-content code {
+  @apply !bg-transparent text-[18px] underline;
+}
+
+.post-content a {
+  @apply text-blue-500 hover:text-blue-400 drop-shadow-sm;
+}
+blockquote {
+  @apply bg-gray-800 pl-6 py-2  border-l-blue-500 border-l-2  drop-shadow-md;
+}
+
+.ql-syntax {
+  @apply !max-h-[30rem] py-4 px-2 !overflow-y-auto;
+}
+.code-div {
+  @apply relative  px-2 py-4 pt-6 pb-2   text-sm  !bg-[#282C34]  rounded-lg p-4;
+}
+
+.ql-editor{
+  color: white !important;
+}
+.ql-editor .image-caption {
+  text-align: center;
+  font-style: italic;
+  
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+}
+
+/* Style the formatter buttons */
+.blot-formatter__toolbar-button {
+  padding: 5px !important;
+  margin: 2px !important;
+  cursor: pointer !important;
+}
+
+.blot-formatter__toolbar-button:hover {
+  background-color: #f0f0f0 !important;
+}
+
+
+
+
+
+.bubble-input {
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0.5rem 0 !important;
+  font-size: 1.1rem !important;
+  background: transparent !important;
+  border-bottom: 1px solid #ccc !important;
+  transition: border-color 0.2s ease;
+}
+
+.bubble-input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-bottom: 2px solid #666 !important;
+}
+
+.bubble-textarea {
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0.5rem 0 !important;
+  font-size: 1.1rem !important;
+  background: transparent !important;
+  border-bottom: 1px solid #ccc !important;
+  resize: none !important;
+}
+
+.bubble-textarea:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-bottom: 2px solid #666 !important;
+}
+
+.bubble-label {
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 0.25rem;
+}
+
+.bubble-form-item {
+  margin-bottom: 2rem;
+}
+
+.bubble-tag-input {
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0.5rem 0 !important;
+  font-size: 1.1rem !important;
+  background: transparent !important;
+  border-bottom: 1px solid #ccc !important;
+}
+
+.bubble-tag {
+  background: transparent !important;
+  border: 1px solid #ccc !important;
+  color: #666 !important;
+}
+
+.bubble-image-upload {
+  border: 2px dashed #ccc !important;
+  background: transparent !important;
+  transition: all 0.2s ease;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.bubble-image-upload:hover {
+  border-color: #666 !important;
+}
+
+.bubble-image-upload.dragging {
+  border-color: #666 !important;
+  background-color: rgba(0, 0, 0, 0.02) !important;
+}
+
+
+
+.ql-toolbar.ql-snow {
+	background: #bfcbda;
+	color: white !important;
+	border: none;
+}
+
+@media (hover: hover) {
+	.ql-syntax::-webkit-scrollbar {
+		width: 7px;
+		height: 7px;
+		cursor: grab;
+	}
+
+	.ql-syntax::-webkit-scrollbar-thumb {
+		background-color: #c8c8c8;
+		border-radius: 7px;
+		height: 7px;
+	}
+
+	.ql-syntax::-webkit-scrollbar-track {
+		background-color: transparent;
+		border-radius: 6px;
+	}
+}
+
+/* Add gap between paragraphs in Quill content */
+.prose p {
+    margin-bottom: 1.5rem !important; /* Adjust the gap between paragraphs */
+}
+
+/* Style ordered and unordered lists */
+
+.prose ol,
+.prose ul {
+    margin-left: 1.5rem !important; /* Add left margin to lists */
+    margin-bottom: 1rem !important; /* Add bottom margin to lists */
+}
+
+/* Style list items */
+.prose li {
+    margin-bottom: 0.5rem !important; /* Add bottom margin to list items */
+}

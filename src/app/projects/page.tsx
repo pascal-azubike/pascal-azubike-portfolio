@@ -1,8 +1,8 @@
-import PortfolioGrid from "@/components/Portfolio";
-import WorkExperience from "@/components/workExperience";
+
 import React from "react";
 import { Metadata } from "next";
 import { siteConfig } from "@/lib/site-config";
+import PortfolioGrid from "@/components/Portfolio";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),

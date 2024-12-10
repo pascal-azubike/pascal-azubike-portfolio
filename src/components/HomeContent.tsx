@@ -5,7 +5,7 @@ import React from "react";
 import WorkExperience from "@/components/workExperience";
 import Grid from "@/components/Grid";
 import PortfolioGrid from "@/components/Portfolio";
-import Footer from "@/components/footer";
+
 import { ContentLayout } from "./content-layout";
 
 

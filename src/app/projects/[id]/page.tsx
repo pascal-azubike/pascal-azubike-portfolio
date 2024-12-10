@@ -195,7 +195,7 @@ export default function ProjectPage({ params }: Props) {
                   {(project.keyFeatures || project.keyHighlights) && (
                     <ScrollAnimation>
                       <div className="grid gap-6 md:grid-cols-2">
-                        {(project.keyFeatures || project.keyHighlights).map((feature, index) => (
+                        {(project.keyFeatures || project.keyHighlights)?.map((feature, index) => (
                           <div
                             key={index}
                             className="p-4 rounded-lg bg-zinc-800/50 backdrop-blur-sm"
@@ -236,7 +236,7 @@ export default function ProjectPage({ params }: Props) {
             {(project.challenges || project.technicalChallenges) && (
               <ScrollAnimation>
                 <div className="space-y-8">
-                  {(project.challenges || project.technicalChallenges).map((item, index) => (
+                  {(project.challenges || project.technicalChallenges)?.map((item, index) => (
                     <div
                       key={index}
                       className="bg-zinc-800/30 rounded-lg p-6 backdrop-blur-sm"

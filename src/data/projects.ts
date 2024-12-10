@@ -472,7 +472,63 @@ export const projectsConfig = {
 };
 
 // Type for individual project
-export type Project = typeof projectsConfig[keyof typeof projectsConfig];
+export type Project = {
+    id: string;
+    title: string;
+    shortTitle?: string;
+    shortDescription: string;
+    fullDescription: string;
+    detailedDescription: string;
+    image: string;
+    links: {
+        live: string;
+        userDemo?: string;
+        adminDemo?: string;
+        github?: string;
+    };
+    keyHighlights?: {
+        title: string;
+        description: string;
+    }[];
+    tools: string[];
+    seoKeywords: string[];
+    metadata: {
+        title: string;
+        description: string;
+        type: MetadataType;
+        url: string;
+        imageAlt: string;
+    };
+    gradientColors: {
+        from: string;
+        to: string;
+    };
+    mainFeatures?: {
+        icon: string;
+        title: string;
+        description: string;
+    }[];
+    keyFeatures?: {
+        title: string;
+        description: string;
+    }[];
+    technicalDetails?: {
+        overview: string;
+        points: string[];
+    };
+    challenges?: {
+        challenge: string;
+        description: string;
+        solution: string;
+        outcome: string;
+    }[];
+    technicalChallenges?: {
+        challenge: string;
+        description: string;
+        solution: string;
+        outcome: string;
+    }[];
+};
 
 // For the Portfolio grid view
 export const portfolioItems = Object.values(projectsConfig).map(project => ({

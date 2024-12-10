@@ -1,14 +1,21 @@
-import { getProjectById } from "@/data/projects";
+import { getProjectById, type Project } from "@/data/projects";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, ShoppingBag, Shield, Sparkles } from "lucide-react";
+import { ArrowUpRight, ShoppingBag, Shield, Sparkles, LucideIcon } from "lucide-react";
 import { Metadata } from "next";
 import { siteConfig } from "@/lib/site-config";
 
 type Props = {
   params: { id: string }
 };
+
+// Define icon mapping type
+type IconMapping = {
+  [key: string]: LucideIcon;
+};
+
+
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = getProjectById(params.id);
@@ -53,11 +60,28 @@ export default function ProjectPage({ params }: Props) {
     notFound();
   }
 
-  const IconComponent = {
+  // Define icon mapping
+  const IconComponent: IconMapping = {
     ShoppingBag,
     Shield,
     Sparkles
   };
+
+  // Helper function to get gradient classes
+  const getGradientClasses = (project: Project) => {
+    const fromColor = project.gradientColors.from.split('/')[0];
+    return {
+      gradientBg: `bg-gradient-to-r from-${project.gradientColors.from} to-${project.gradientColors.to}`,
+      borderColor: project.id === 'wellcrest-therapy' 
+        ? 'border-blue-400/20' 
+        : `border-${fromColor}/20`,
+      textColor: project.id === 'wellcrest-therapy' 
+        ? 'text-blue-400' 
+        : `text-${fromColor}`
+    };
+  };
+
+  const gradientClasses = getGradientClasses(project);
 
   return (
     <div className="min-h-screen pt-28 bg-zinc-900 text-white">
@@ -125,7 +149,7 @@ export default function ProjectPage({ params }: Props) {
               />
             </div>
             {/* Decorative elements */}
-            <div className={`absolute -inset-x-4 -inset-y-4 z-0 bg-gradient-to-r from-${project.gradientColors.from} to-${project.gradientColors.to} opacity-50 blur-3xl`} />
+            <div className={`absolute -inset-x-4 -inset-y-4 z-0 ${gradientClasses.gradientBg} opacity-50 blur-3xl`} />
             <div className={`absolute -inset-x-10 -inset-y-10 z-0 bg-${project.gradientColors.from.split('/')[0]}/10 opacity-30 blur-2xl`} />
           </div>
 
@@ -160,26 +184,17 @@ export default function ProjectPage({ params }: Props) {
                 )}
 
                 {/* Key Features or Highlights */}
-                {(project.keyFeatures || project.keyHighlights) && (
-                  <>
-                    <p className="font-semibold text-white text-xl mt-8">
-                      Key Highlights:
-                    </p>
-                    <div className="grid gap-6 md:grid-cols-2">
-                      {(project.keyFeatures || project.keyHighlights).map((feature, index) => (
-                        <div
-                          key={index}
-                          className="p-4 rounded-lg bg-zinc-800/50 backdrop-blur-sm"
-                        >
-                          <h3 className="text-white font-semibold mb-2">
-                            {feature.title}
-                          </h3>
-                          <p>{feature.description}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </>
-                )}
+                {(project.keyFeatures || project.keyHighlights || []).map((feature, index) => (
+                  <div
+                    key={index}
+                    className="p-4 rounded-lg bg-zinc-800/50 backdrop-blur-sm"
+                  >
+                    <h3 className="text-white font-semibold mb-2">
+                      {feature.title}
+                    </h3>
+                    <p>{feature.description}</p>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -201,70 +216,51 @@ export default function ProjectPage({ params }: Props) {
             )}
 
             {/* Challenges & Solutions - if available */}
-            {(project.challenges || project.technicalChallenges) && (
-              <div className="space-y-16">
-                <div>
-                  <h2 className="text-2xl md:text-3xl font-bold mb-8">
-                    Challenges & Solutions
-                  </h2>
-                  <div className="space-y-8">
-                    {(project.challenges || project.technicalChallenges).map((item, index) => (
-                      <div
-                        key={index}
-                        className="bg-zinc-800/30 rounded-lg p-6 backdrop-blur-sm"
-                      >
-                        <h3 className={`text-xl font-semibold mb-4 ${
-                          project.id === 'wellcrest-therapy' 
-                            ? 'text-blue-400' 
-                            : `text-${project.gradientColors.from.split('/')[0]}`
-                        }`}>
-                          {item.challenge}
-                        </h3>
-                        <div className="grid gap-4 md:grid-cols-3">
-                          <div>
-                            <h4 className="text-white font-medium mb-2">
-                              Challenge:
-                            </h4>
-                            <p className="text-gray-400">{item.description}</p>
-                          </div>
-                          <div>
-                            <h4 className="text-white font-medium mb-2">
-                              Solution:
-                            </h4>
-                            <p className="text-gray-400">{item.solution}</p>
-                          </div>
-                          <div>
-                            <h4 className="text-white font-medium mb-2">
-                              Outcome:
-                            </h4>
-                            <p className="text-gray-400">{item.outcome}</p>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
+            {(project.challenges || project.technicalChallenges || []).map((item, index) => (
+              <div
+                key={index}
+                className="bg-zinc-800/30 rounded-lg p-6 backdrop-blur-sm"
+              >
+                <h3 className={`text-xl font-semibold mb-4 ${gradientClasses.textColor}`}>
+                  {item.challenge}
+                </h3>
+                <div className="grid gap-4 md:grid-cols-3">
+                  <div>
+                    <h4 className="text-white font-medium mb-2">
+                      Challenge:
+                    </h4>
+                    <p className="text-gray-400">{item.description}</p>
                   </div>
-                </div>
-
-                {/* Update the Tools Used section styling */}
-                <div>
-                  <h2 className="text-2xl md:text-3xl font-bold mb-8">Tools Used</h2>
-                  <div className="flex flex-wrap gap-3">
-                    {project.tools.map((tool) => (
-                      <span
-                        key={tool}
-                        className={`px-4 py-2 bg-zinc-800/50 border ${
-                          project.id === 'wellcrest-therapy' 
-                            ? 'border-blue-400/20' 
-                            : `border-${project.gradientColors.from.split('/')[0]}/20`
-                        } rounded-lg text-sm backdrop-blur-sm`}
-                      >
-                        {tool}
-                      </span>
-                    ))}
+                  <div>
+                    <h4 className="text-white font-medium mb-2">
+                      Solution:
+                    </h4>
+                    <p className="text-gray-400">{item.solution}</p>
+                  </div>
+                  <div>
+                    <h4 className="text-white font-medium mb-2">
+                      Outcome:
+                    </h4>
+                    <p className="text-gray-400">{item.outcome}</p>
                   </div>
                 </div>
               </div>
-            )}
+            ))}
+
+            {/* Update the Tools Used section styling */}
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold mb-8">Tools Used</h2>
+              <div className="flex flex-wrap gap-3">
+                {project.tools.map((tool) => (
+                  <span
+                    key={tool}
+                    className={`px-4 py-2 bg-zinc-800/50 border ${gradientClasses.borderColor} rounded-lg text-sm backdrop-blur-sm`}
+                  >
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>

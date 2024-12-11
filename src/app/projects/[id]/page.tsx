@@ -1,4 +1,4 @@
-import { getProjectById, type Project } from "@/data/projects";
+import { getProjectById, type Project, projectsConfig } from "@/data/projects";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,7 +16,13 @@ type IconMapping = {
   [key: string]: LucideIcon;
 };
 
-
+// Add this function to generate static paths
+export async function generateStaticParams() {
+  // Get all project IDs from the projectsConfig
+  return Object.keys(projectsConfig).map((id) => ({
+    id: id,
+  }));
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = getProjectById(params.id);

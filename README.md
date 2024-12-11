@@ -8,7 +8,7 @@ Check it out here: [Pascal's Portfolio](https://pascal-azubike.github.io/pascal-
 
 ## 📸 Preview
 
-![Portfolio Home](./public/assets/images/portfolio-preview.png)
+![Portfolio Home](https://res.cloudinary.com/dztt3ldiy/image/upload/v1733952347/pascal-portfolio_chdn7z.png)
 
 
 

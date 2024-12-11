@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  basePath: "/pascal-azubike-portfolio",
   output: "export",
   reactStrictMode: true,
   images: {

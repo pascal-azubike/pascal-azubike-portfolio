@@ -176,17 +176,7 @@ export default function About() {
             </div>
           </ScrollAnimation>
 
-          <ScrollAnimation className="mt-8">
-            <Link
-              href="/book-call"
-              className="inline-flex items-center px-6 py-3 text-base font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition duration-150 ease-in-out"
-            >
-              Schedule a Call
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 ml-2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-              </svg>
-            </Link>
-          </ScrollAnimation>
+         
         </main>
         <ScrollAnimation>
           <div className="flex">

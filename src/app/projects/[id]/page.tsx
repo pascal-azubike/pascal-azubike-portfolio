@@ -6,6 +6,7 @@ import { ArrowUpRight, ShoppingBag, Shield, Sparkles, LucideIcon } from "lucide-
 import { Metadata } from "next";
 import { siteConfig } from "@/lib/site-config";
 import { ScrollAnimation } from "@/components/scroll-animation";
+import { getImagePath } from '@/lib/utils';
 
 type Props = {
   params: { id: string }
@@ -152,7 +153,7 @@ export default function ProjectPage({ params }: Props) {
             <div className="mb-16 relative">
               <div className="relative aspect-[16/9] rounded-xl overflow-hidden bg-zinc-800">
                 <Image
-                  src={project.image}
+                  src={getImagePath(project.image)}
                   alt={project.metadata.imageAlt}
                   fill
                   className="max-h-[90%] max-w-[90%] mx-auto my-auto rounded-lg"

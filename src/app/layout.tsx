@@ -85,6 +85,23 @@ export default function RootLayout({
       <body className={GeistSans.className}>
         {children}
         <Toaster />
+
+        {/* Live2Support Chat */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(){
+                var pp = document.createElement('script'),
+                    ppr = document.getElementsByTagName('script')[0];
+                stid = 'M2xUNXdEalVqcTRWUUFBQXlOT2NqQT09';
+                pp.type = 'text/javascript';
+                pp.async = true;
+                pp.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 's01.live2support.com/dashboardv2/chatwindow/';
+                ppr.parentNode.insertBefore(pp, ppr);
+              })();
+            `
+          }}
+        />
       </body>
     </html>
   );

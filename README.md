@@ -6,7 +6,11 @@ Hey there! 👋 This is my submission for the Marknox Media portfolio assignment
 
 Check it out here: [Pascal's Portfolio](https://pascal-azubike.github.io/pascal-azubike-portfolio/)
 
-## Assignment Overview
+## 📸 Preview
+
+![Portfolio Home](./public/assets/images/portfolio-preview.png)
+
+
 
 This project was created as part of Marknox Media's technical assessment, with a focus on:
 - Modern web development practices

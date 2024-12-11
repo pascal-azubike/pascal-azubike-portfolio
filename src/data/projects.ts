@@ -326,13 +326,13 @@ export const projectsConfig = {
                 outcome: "Now readers find exactly what they're looking for, even when they're not sure how to ask for it. The 'related posts' feature has become everyone's favorite way to discover new content."
             },
             {
-                title: "Keeping Things Fast and Fresh",
+                challenge: "Keeping Things Fast and Fresh",
                 description: "The platform needed to handle lots of content without slowing down, especially for users with large followings.",
                 solution: "Built a clever caching system with Redux Toolkit and implemented infinite scrolling that loads content just before you need it.",
                 outcome: "The feed stays lightning-fast even with thousands of posts, and users spend twice as long exploring content."
             },
             {
-                title: "Making Writing Feel Natural",
+                challenge: "Making Writing Feel Natural",
                 description: "Writers were getting frustrated with clunky editors that got in the way of their creativity.",
                 solution: "Customized Quill editor with just the right features, added auto-save, and made formatting feel intuitive.",
                 outcome: "Writers tell us they actually enjoy writing on Blogvana - some have even moved their entire blogs over from other platforms!"

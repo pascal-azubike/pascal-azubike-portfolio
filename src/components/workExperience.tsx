@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Apple, Chrome, Film, Scroll } from "lucide-react";
 import { ScrollAnimation } from "./scroll-animation";
+import { getImagePath } from '@/lib/utils';
 
 const companies = [
   {
     name: "ABC Capital",
-    icon: "/assets/images/abc-logo (1).svg",
+    icon: getImagePath("assets/images/abc-logo (1).svg"),
     experience: {
       title: "Software Engineer",
       period: "May 2024 - till date",
@@ -37,7 +38,7 @@ const companies = [
   },
   {
     name: "CITE UNIPORT",
-    icon: "/assets/images/uniport.svg",
+    icon: getImagePath("assets/images/uniport.svg"),
     experience: {
       title: "Software Engineer Intern",
       period: "Feb 2020 - Nov 2022",

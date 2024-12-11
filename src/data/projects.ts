@@ -13,7 +13,7 @@ export const projectsConfig = {
         shortDescription: "A sophisticated e-commerce platform featuring real-time data management, advanced search capabilities, and optimized user experience.",
         fullDescription: "This case study explores denmarkmultibuzltd, covering the Project Overview, Tools Used, and Live Links to the official product.",
         detailedDescription: "I led the development of DenmarkMultibuz, a comprehensive e-commerce platform built with Next.js for seamless and dynamic user experiences. The platform features advanced product management, user and admin interfaces, and optimized performance.",
-        image: "/assets/images/denmark.png",
+        image: "./assets/images/denmark.png",
         links: {
             live: "https://denmarkmultibuzltd.com/",
             userDemo: "https://www.veed.io/view/7ea6ce4f-b0e6-42ae-a7c4-187482addcb5?panel=share",
@@ -98,7 +98,7 @@ export const projectsConfig = {
         shortDescription: "A comprehensive analytics dashboard project showcasing data visualization, real-time analytics, and interactive reporting capabilities.",
         fullDescription: "This case study explores the Analytical Dashboard Project, covering the Project Overview, Tools Used, and Live Links to the official product.",
         detailedDescription: "I led the development of a feature-rich analytical dashboard utilizing Flask for the backend and React.js for the frontend. The dashboard incorporates real-time charting, dynamic filtering, and axis toggling capabilities.",
-        image: "/assets/images/analyticaldashboard.png",
+        image: "./assets/images/analyticaldashboard.png",
         links: {
             live: "https://dashboardcharts.vercel.app/",
             github: "https://github.com/pascal-tech1/analytical-dashboard"
@@ -178,7 +178,7 @@ export const projectsConfig = {
         shortDescription: "A modern blogging platform built with semantic search capabilities, comprehensive authentication, and dynamic user experience.",
         fullDescription: "This case study explores Blogvana Blog Project, covering the Project Overview, Tools Used, and Live Links to the official product.",
         detailedDescription: "I spearheaded the creation of a feature-rich and user-centric medium-like blog application, leveraging a robust tech stack including Node.js, MongoDB, Express.js, React.js, and Redux Toolkit. This project encompassed full-scale authentication, empowering users to manage their profiles, create posts and messages seamlessly. I also included semantic searching and post recommendation with gte-small machine learning algorithm and mongodb vector search.",
-        image: "/assets/images/blogvana.png",
+        image: "./assets/images/blogvana.png",
         links: {
             live: "https://blogvana-5l46.onrender.com/",
             github: "https://github.com/pascal-tech1/blogvana-deploy"
@@ -259,7 +259,7 @@ export const projectsConfig = {
         shortDescription: "A premier e-commerce platform for faith-based puzzles and games.",
         fullDescription: "A premier e-commerce platform for faith-based puzzles and games, featuring a dynamic product catalog, content management system, and seamless integration with Jumia for secure transactions.",
         detailedDescription: "Led the development of a comprehensive e-commerce platform for faith-based puzzles and games. The project features a dynamic product catalog, robust admin panel, and seamless integration with Jumia for order fulfillment.",
-        image: "/assets/images/plumbreedpuzzle.png",
+        image: "./assets/images/plumbreedpuzzle.png",
         links: {
             live: "https://www.plumbreedboardgames.com/"
         },
@@ -368,7 +368,7 @@ export const projectsConfig = {
         shortDescription: "A comprehensive mental health clinic website serving Georgia and Arizona.",
         fullDescription: "A comprehensive mental health clinic website serving Georgia and Arizona, offering accessible and affordable treatment for patients aged 16 and above. This case study explores the development of a full-stack Next.js application with both client and server-side optimization.",
         detailedDescription: "Developed a comprehensive mental health clinic website utilizing Next.js for both frontend and backend, emphasizing SEO optimization, responsive design, and a calming color palette tailored for mental health services. The project features separate user and admin interfaces, with robust content management capabilities and seamless communication channels.",
-        image: "/assets/images/wellcrstherapy.png",
+        image: "./assets/images/wellcrstherapy.png",
         links: {
             live: "https://www.wellcresttherapy.com/"
         },

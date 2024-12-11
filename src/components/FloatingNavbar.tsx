@@ -17,6 +17,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Button } from "./ui/button";
+import { getImagePath } from '@/lib/utils';
 
 /**
  * NavbarItem Component
@@ -54,7 +55,7 @@ const ProfileSection = () => {
     >
       <div onClick={handleImageClick}>
         <Image
-          src="/assets/images/pascal.jpg"
+          src={getImagePath("assets/images/pascal.jpg")}
           alt="Azubike Pascal"
           width={300}
           height={300}

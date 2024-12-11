@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SocialLinks from "./footer/social-links";
 import { ScrollAnimation } from "./scroll-animation";
+import { getImagePath } from '@/lib/utils';
 
 /**
  * Footer Component
@@ -24,7 +25,7 @@ const Footer = () => {
           <Link href={"/"} className="flex items-center mb-4">
             <div className="font-bold text-sm flex items-center justify-center text-white space-x-2 md:text-xl">
               <Image
-                src="/assets/images/pascal.jpg"
+                src={getImagePath("assets/images/pascal.jpg")}
                 alt="Azubike"
                 width={32}
                 height={32}

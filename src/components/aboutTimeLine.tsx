@@ -1,6 +1,8 @@
-
 import React from "react";
 import { Timeline } from "@/components/ui/timeline";
+import { cn } from "@/lib/utils";
+
+import { GeistSans } from "geist/font/sans";
 
 export function TimelineDemo() {
   const data = [
@@ -78,7 +80,7 @@ export function TimelineDemo() {
     }
   ];
   return (
-    <div className="w-full bg-zinc-900">
+    <div className={cn("max-w-5xl mx-auto px-4 md:px-8 py-12", GeistSans.className)}>
       <Timeline data={data} />
     </div>
   );

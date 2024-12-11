@@ -98,7 +98,7 @@ export const FloatingNavbar = () => {
         {/* Desktop CV Download Button - Hidden on mobile */}
         <div className="hidden md:block">
           <a
-            href="/assets/pascalResume.pdf"
+            href={getImagePath("assets/pascalResume.pdf")}
             download
             className="bg-gradient-to-br from-zinc-700 to-zinc-800 text-white px-4 py-2 rounded-lg hover:bg-gradient-to-br hover:from-zinc-700 hover:to-zinc-800 hover:shadow-lg hover:shadow-zinc-700/50 transition-all duration-300"
           >
@@ -126,7 +126,7 @@ export const FloatingNavbar = () => {
                   </Link>
                 ))}
                 <a
-                  href="/assets/pascalResume.pdf"
+                  href={getImagePath("assets/pascalResume.pdf")}
                   download
                   className="bg-gradient-to-br from-zinc-700 to-zinc-800 text-white px-4 py-2 rounded hover:bg-zinc-700 transition-colors duration-200 mt-4"
                 >
